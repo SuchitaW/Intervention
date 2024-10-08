@@ -1,0 +1,21 @@
+$(document).ready(function() {
+CucumberHTML.timelineItems.pushArray([
+  {
+    "id": "21cf148b-de25-4a7f-9a83-59005f18e53d",
+    "feature": "Administration page feature",
+    "scenario": "To verify the companies page functionality",
+    "start": 1717066957838,
+    "group": 1,
+    "content": "",
+    "tags": "@ui,@company,",
+    "end": 1717066982022,
+    "className": "pending"
+  }
+]);
+CucumberHTML.timelineGroups.pushArray([
+  {
+    "id": 1,
+    "content": "Thread[main,5,main]"
+  }
+]);
+});

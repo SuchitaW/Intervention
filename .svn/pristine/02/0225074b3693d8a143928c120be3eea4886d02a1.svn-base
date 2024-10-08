@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="91.918">
+<testcase classname="End to End Intervention feature" name="To verify the e2e flow with company login of intervention functionality" time="91.502">
+<failure message="Cannot locate an element using xpath=//p-dropdown[@id='drps____CompanyId']/div/span&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'XSSPC07', ip: '10.10.222.86', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_202'&#10;Driver info: driver.version: RemoteWebDriver" type="org.openqa.selenium.NoSuchElementException"><![CDATA[Given User is on the login page.............................................passed
+When User logs into the intervention application using the username and password provided in a spreadsheet named "Interventionflow" at the specified 0.passed
+And User clicks on the Sign In button in a spreadsheet named "Interventionflow" at the specified 0.passed
+And User creates new url from given sheetname "Interventionflow" and rownumber 0.passed
+And User creates new companies from given sheetname "Interventionflow" and rownumber 0.passed
+And User creates new login for companies from given sheetname "Interventionflow" and rownumber 0.failed
+And User view the existing company details from given sheetname "Interventionflow" and rownumber 0.skipped
+And User creates new contact person for newly created company from given sheetname "Interventionflow" and rownumber 0.skipped
+And User view the existing new contact person details from given sheetname "Interventionflow" and rownumber 0.skipped
+And User creates new projects for newly created company from given sheetname "Interventionflow" and rownumber 0.skipped
+And User view the existing projects details from given sheetname "Interventionflow" and rownumber 0.skipped
+And User creates new Intervention type for newly created compan from given sheetname "Interventionflow" and rownumber 0.skipped
+And User view the existing Intervention type details from given sheetname "Interventionflow" and rownumber 0.skipped
+And User creates new Intervention code for newly created company from given sheetname "Interventionflow" and rownumber 0.skipped
+And User view the existing Intervention code details from given sheetname "Interventionflow" and rownumber 0.skipped
+Then User delete the updated intervention...................................skipped
+
+StackTrace:
+org.openqa.selenium.NoSuchElementException: Cannot locate an element using xpath=//p-dropdown[@id='drps____CompanyId']/div/span
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'XSSPC07', ip: '10.10.222.86', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_202'
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:327)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at pageobjects.AdministrationPage.Create_New_Logins_fromCompanies(AdministrationPage.java:927)
+	at stepDefs.NewIntervention_StepDefs.user_creates_new_login_for_companies_from_given_sheetname_and_rownumber(NewIntervention_StepDefs.java:318)
+	at ✽.User creates new login for companies from given sheetname "Interventionflow" and rownumber 0(classpath:features/Interventione2eFlow.feature:60)
+]]></failure>
+</testcase>
+</testsuite>

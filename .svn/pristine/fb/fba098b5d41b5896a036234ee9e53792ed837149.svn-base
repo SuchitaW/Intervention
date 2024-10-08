@@ -1,0 +1,231 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "start_timestamp": "2024-05-30T11:02:37.838Z",
+        "before": [
+          {
+            "output": [
+              "Browser invoked"
+            ],
+            "result": {
+              "duration": 4374000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefs.StepDefs_Hooks.setup(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "line": 21,
+        "name": "To verify the companies page functionality",
+        "description": "",
+        "id": "administration-page-feature;to-verify-the-companies-page-functionality;;2",
+        "after": [
+          {
+            "output": [
+              "Test case is passed, no screen shot captured"
+            ],
+            "result": {
+              "duration": 7000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefs.StepDefs_Hooks.takeScreenShot(io.cucumber.java.Scenario)"
+            }
+          },
+          {
+            "output": [
+              "Browser closed"
+            ],
+            "result": {
+              "duration": 899000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefs.StepDefs_Hooks.cleanUp(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "output": [
+              "Browser navigated"
+            ],
+            "result": {
+              "duration": 3838000000,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "User is on the login page",
+            "match": {
+              "location": "stepDefs.Login_StepDefs.user_is_on_the_login_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "output": [
+              "Entered Username :suchita@xss.be",
+              "Entered Password :Suchita@1234"
+            ],
+            "result": {
+              "duration": 1211000000,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "User logs into the intervention application using the username and password provided in a spreadsheet named \"Company\" at the specified 0",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Company\"",
+                  "offset": 108
+                },
+                {
+                  "val": "0",
+                  "offset": 135
+                }
+              ],
+              "location": "stepDefs.Login_StepDefs.user_logs_into_the_intervention_application_using_the_username_and_password_provided_in_a_spreadsheet_named_at_the_specified(java.lang.String,java.lang.Integer)"
+            },
+            "keyword": "And "
+          },
+          {
+            "output": [
+              "Toast message after clicked on sign in button : Logged in Successfully."
+            ],
+            "result": {
+              "duration": 6841000000,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "User clicks on the Sign In button in a spreadsheet named \"Company\" at the specified 0",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Company\"",
+                  "offset": 57
+                },
+                {
+                  "val": "0",
+                  "offset": 84
+                }
+              ],
+              "location": "stepDefs.Login_StepDefs.user_clicks_on_the_sign_in_button_in_a_spreadsheet_named_at_the_specified(java.lang.String,java.lang.Integer)"
+            },
+            "keyword": "And "
+          },
+          {
+            "output": [
+              "Clicked on Administration",
+              "Clicked on Companies",
+              "Clicked on New company"
+            ],
+            "result": {
+              "duration": 6899000000,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "User creates new companies from given sheetname \"Company\" and rownumber 0",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Company\"",
+                  "offset": 48
+                },
+                {
+                  "val": "0",
+                  "offset": 72
+                }
+              ],
+              "location": "stepDefs.Administration_StepDefs.user_creates_new_companies_from_given_sheetname_and_rownumber(java.lang.String,java.lang.Integer)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "error_message": "io.cucumber.java.PendingException: TODO: implement me\r\n\tat stepDefs.Administration_StepDefs.user_view_the_existing_company_details_from_given_sheetname_and_rownumber(Administration_StepDefs.java:69)\r\n\tat ✽.User view the existing company details from given sheetname \"Company\" and rownumber 0(classpath:features/Administration.feature:15)\r\n",
+              "duration": 5000000,
+              "status": "pending"
+            },
+            "line": 15,
+            "name": "User view the existing company details from given sheetname \"Company\" and rownumber 0",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Company\"",
+                  "offset": 60
+                },
+                {
+                  "val": "0",
+                  "offset": 84
+                }
+              ],
+              "location": "stepDefs.Administration_StepDefs.user_view_the_existing_company_details_from_given_sheetname_and_rownumber(java.lang.String,java.lang.Integer)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "skipped"
+            },
+            "line": 16,
+            "name": "User edit the existing company from given sheetname \"Company\" and rownumber 0",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Company\"",
+                  "offset": 52
+                },
+                {
+                  "val": "0",
+                  "offset": 76
+                }
+              ],
+              "location": "stepDefs.Administration_StepDefs.user_edit_the_existing_company_from_given_sheetname_and_rownumber(java.lang.String,java.lang.Integer)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2000000,
+              "status": "skipped"
+            },
+            "line": 17,
+            "name": "User delete the updated comapny",
+            "match": {
+              "location": "stepDefs.Administration_StepDefs.user_delete_the_updated_comapny()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@ui"
+          },
+          {
+            "name": "@company"
+          }
+        ]
+      }
+    ],
+    "name": "Administration page feature",
+    "description": "",
+    "id": "administration-page-feature",
+    "keyword": "Feature",
+    "uri": "classpath:features/Administration.feature",
+    "tags": [
+      {
+        "name": "@ui",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      }
+    ]
+  }
+]

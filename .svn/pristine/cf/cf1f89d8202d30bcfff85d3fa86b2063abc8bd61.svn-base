@@ -1,0 +1,455 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "start_timestamp": "2024-06-26T12:23:36.572Z",
+        "before": [
+          {
+            "output": [
+              "Browser invoked"
+            ],
+            "result": {
+              "duration": 4471000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefs.StepDefs_Hooks.setup(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "line": 77,
+        "name": "To verify the e2e flow with company login of intervention functionality",
+        "description": "",
+        "id": "end-to-end-intervention-feature;to-verify-the-e2e-flow-with-company-login-of-intervention-functionality;;2",
+        "after": [
+          {
+            "result": {
+              "error_message": "org.openqa.selenium.NoSuchWindowException: no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome\u003d126.0.6478.126)\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027XSSPC07\u0027, ip: \u002710.10.222.86\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u00271.8.0_202\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.126, chrome: {chromedriverVersion: 126.0.6478.126 (d36ace6122e..., userDataDir: C:\\Users\\SUCHIT~1\\AppData\\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60003}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}\nSession ID: 63ff72a75a8bd661b1810e05155f48e2\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:609)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:295)\r\n\tat stepDefs.StepDefs_Hooks.takeScreenShot(StepDefs_Hooks.java:77)\r\n",
+              "duration": 16000000,
+              "status": "failed"
+            },
+            "match": {
+              "location": "stepDefs.StepDefs_Hooks.takeScreenShot(io.cucumber.java.Scenario)"
+            }
+          },
+          {
+            "output": [
+              "Browser closed"
+            ],
+            "result": {
+              "duration": 811000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefs.StepDefs_Hooks.cleanUp(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "output": [
+              "Browser navigated",
+              "Clicked on I agree button"
+            ],
+            "result": {
+              "duration": 6013000000,
+              "status": "passed"
+            },
+            "line": 55,
+            "name": "User is on the login page",
+            "match": {
+              "location": "stepDefs.Login_StepDefs.user_is_on_the_login_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "output": [
+              "Entered Username :suchita@xss.be",
+              "Entered Password :d9HG+ESL"
+            ],
+            "result": {
+              "duration": 1307000000,
+              "status": "passed"
+            },
+            "line": 56,
+            "name": "User logs into the intervention application using the username and password provided in a spreadsheet named \"Interventionflow\" at the specified 0",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Interventionflow\"",
+                  "offset": 108
+                },
+                {
+                  "val": "0",
+                  "offset": 144
+                }
+              ],
+              "location": "stepDefs.Login_StepDefs.user_logs_into_the_intervention_application_using_the_username_and_password_provided_in_a_spreadsheet_named_at_the_specified(java.lang.String,java.lang.Integer)"
+            },
+            "keyword": "When "
+          },
+          {
+            "output": [
+              "Assert passed",
+              "Toast message after clicked on sign in button : Logged in Successfully."
+            ],
+            "result": {
+              "duration": 6890000000,
+              "status": "passed"
+            },
+            "line": 57,
+            "name": "User clicks on the Sign In button in a spreadsheet named \"Interventionflow\" at the specified 0",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Interventionflow\"",
+                  "offset": 57
+                },
+                {
+                  "val": "0",
+                  "offset": 93
+                }
+              ],
+              "location": "stepDefs.Login_StepDefs.user_clicks_on_the_sign_in_button_in_a_spreadsheet_named_at_the_specified(java.lang.String,java.lang.Integer)"
+            },
+            "keyword": "And "
+          },
+          {
+            "output": [
+              "Clicked on Administration",
+              "Clicked on To Url ",
+              "Clicked on New Url",
+              "Entered name of url : https://www.jsw22.com",
+              "Entered description of url : Maharashtra",
+              "Url is active",
+              "Clicked on save to url",
+              "Toast message after click on save button : Data saved successfully."
+            ],
+            "result": {
+              "duration": 11073000000,
+              "status": "passed"
+            },
+            "line": 58,
+            "name": "User creates new url from given sheetname \"Interventionflow\" and rownumber 0",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Interventionflow\"",
+                  "offset": 42
+                },
+                {
+                  "val": "0",
+                  "offset": 75
+                }
+              ],
+              "location": "stepDefs.Administration_StepDefs.user_creates_new_url_from_given_sheetname_and_rownumber(java.lang.String,java.lang.Integer)"
+            },
+            "keyword": "And "
+          },
+          {
+            "output": [
+              "Clicked on Administration",
+              "Clicked on Companies",
+              "Clicked on New company",
+              "Entered Company Name : AWS",
+              "Entered Company Name : AWS",
+              "Entered Company Address : Andheri - Kurla Rd, Chakala, Andheri East, Mumbai, Maharashtra 400093",
+              "Selected Company Country is: India",
+              "Entered Company Telephone : 022 6111 6111",
+              "Entered Company Location : Mumbai",
+              "Entered Company Mail: xssuser@outlook.com",
+              "Entered Company GSM : 335454654",
+              "Entered Company FAX : fax-212334556",
+              "Entered Company BTW : sdsfkjgyhgybj",
+              "Selected Parent company is: Diamond",
+              "Entered Company Remark : Welcome to new company",
+              "Send weekly mail is Inactive",
+              "Is Client is active",
+              "Is Disable is active",
+              "Clicked on save new company",
+              "Toast message after click on save button : Data saved successfully.",
+              "Clicked on No "
+            ],
+            "result": {
+              "duration": 38074000000,
+              "status": "passed"
+            },
+            "line": 59,
+            "name": "User creates new companies from given sheetname \"Interventionflow\" and rownumber 0",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Interventionflow\"",
+                  "offset": 48
+                },
+                {
+                  "val": "0",
+                  "offset": 81
+                }
+              ],
+              "location": "stepDefs.Administration_StepDefs.user_creates_new_companies_from_given_sheetname_and_rownumber(java.lang.String,java.lang.Integer)"
+            },
+            "keyword": "And "
+          },
+          {
+            "output": [
+              "Clicked on Yes "
+            ],
+            "result": {
+              "error_message": "org.openqa.selenium.NoSuchElementException: Cannot locate an element using xpath\u003d//p-dropdown[@id\u003d\u0027drps____CompanyId\u0027]/div/span\nFor documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027XSSPC07\u0027, ip: \u002710.10.222.86\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u00271.8.0_202\u0027\nDriver info: driver.version: RemoteWebDriver\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:327)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)\r\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:353)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\r\n\tat pageobjects.AdministrationPage.Create_New_Logins_fromCompanies(AdministrationPage.java:927)\r\n\tat stepDefs.NewIntervention_StepDefs.user_creates_new_login_for_companies_from_given_sheetname_and_rownumber(NewIntervention_StepDefs.java:318)\r\n\tat ✽.User creates new login for companies from given sheetname \"Interventionflow\" and rownumber 0(classpath:features/Interventione2eFlow.feature:60)\r\n",
+              "duration": 22643000000,
+              "status": "failed"
+            },
+            "line": 60,
+            "name": "User creates new login for companies from given sheetname \"Interventionflow\" and rownumber 0",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Interventionflow\"",
+                  "offset": 58
+                },
+                {
+                  "val": "0",
+                  "offset": 91
+                }
+              ],
+              "location": "stepDefs.NewIntervention_StepDefs.user_creates_new_login_for_companies_from_given_sheetname_and_rownumber(java.lang.String,java.lang.Integer)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 12000000,
+              "status": "skipped"
+            },
+            "line": 61,
+            "name": "User view the existing company details from given sheetname \"Interventionflow\" and rownumber 0",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Interventionflow\"",
+                  "offset": 60
+                },
+                {
+                  "val": "0",
+                  "offset": 93
+                }
+              ],
+              "location": "stepDefs.Administration_StepDefs.user_view_the_existing_company_details_from_given_sheetname_and_rownumber(java.lang.String,java.lang.Integer)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2000000,
+              "status": "skipped"
+            },
+            "line": 62,
+            "name": "User creates new contact person for newly created company from given sheetname \"Interventionflow\" and rownumber 0",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Interventionflow\"",
+                  "offset": 79
+                },
+                {
+                  "val": "0",
+                  "offset": 112
+                }
+              ],
+              "location": "stepDefs.NewIntervention_StepDefs.user_creates_new_contact_person_for_newly_created_company_from_given_sheetname_and_rownumber(java.lang.String,java.lang.Integer)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 63,
+            "name": "User view the existing new contact person details from given sheetname \"Interventionflow\" and rownumber 0",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Interventionflow\"",
+                  "offset": 71
+                },
+                {
+                  "val": "0",
+                  "offset": 104
+                }
+              ],
+              "location": "stepDefs.Administration_StepDefs.user_view_the_existing_new_contact_person_details_from_given_sheetname_and_rownumber(java.lang.String,java.lang.Integer)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "skipped"
+            },
+            "line": 64,
+            "name": "User creates new projects for newly created company from given sheetname \"Interventionflow\" and rownumber 0",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Interventionflow\"",
+                  "offset": 73
+                },
+                {
+                  "val": "0",
+                  "offset": 106
+                }
+              ],
+              "location": "stepDefs.NewIntervention_StepDefs.user_creates_new_projects_for_newly_created_company_from_given_sheetname_and_rownumber(java.lang.String,java.lang.Integer)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 65,
+            "name": "User view the existing projects details from given sheetname \"Interventionflow\" and rownumber 0",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Interventionflow\"",
+                  "offset": 61
+                },
+                {
+                  "val": "0",
+                  "offset": 94
+                }
+              ],
+              "location": "stepDefs.Master_StepDefs.user_view_the_existing_projects_details_from_given_sheetname_and_rownumber(java.lang.String,java.lang.Integer)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 7000000,
+              "status": "skipped"
+            },
+            "line": 66,
+            "name": "User creates new Intervention type for newly created compan from given sheetname \"Interventionflow\" and rownumber 0",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Interventionflow\"",
+                  "offset": 81
+                },
+                {
+                  "val": "0",
+                  "offset": 114
+                }
+              ],
+              "location": "stepDefs.NewIntervention_StepDefs.user_creates_new_intervention_type_for_newly_created_compan_from_given_sheetname_and_rownumber(java.lang.String,java.lang.Integer)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 67,
+            "name": "User view the existing Intervention type details from given sheetname \"Interventionflow\" and rownumber 0",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Interventionflow\"",
+                  "offset": 70
+                },
+                {
+                  "val": "0",
+                  "offset": 103
+                }
+              ],
+              "location": "stepDefs.Master_StepDefs.user_view_the_existing_intervention_type_details_from_given_sheetname_and_rownumber(java.lang.String,java.lang.Integer)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 68,
+            "name": "User creates new Intervention code for newly created company from given sheetname \"Interventionflow\" and rownumber 0",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Interventionflow\"",
+                  "offset": 82
+                },
+                {
+                  "val": "0",
+                  "offset": 115
+                }
+              ],
+              "location": "stepDefs.NewIntervention_StepDefs.user_creates_new_intervention_code_for_newly_created_company_from_given_sheetname_and_rownumber(java.lang.String,java.lang.Integer)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 69,
+            "name": "User view the existing Intervention code details from given sheetname \"Interventionflow\" and rownumber 0",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Interventionflow\"",
+                  "offset": 70
+                },
+                {
+                  "val": "0",
+                  "offset": 103
+                }
+              ],
+              "location": "stepDefs.Master_StepDefs.user_view_the_existing_intervention_code_details_from_given_sheetname_and_rownumber(java.lang.String,java.lang.Integer)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "skipped"
+            },
+            "line": 73,
+            "name": "User delete the updated intervention",
+            "match": {
+              "location": "stepDefs.NewIntervention_StepDefs.user_delete_the_updatedintervention()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@ui"
+          },
+          {
+            "name": "@e2eflow"
+          }
+        ]
+      }
+    ],
+    "name": "End to End Intervention feature",
+    "description": "",
+    "id": "end-to-end-intervention-feature",
+    "keyword": "Feature",
+    "uri": "classpath:features/Interventione2eFlow.feature",
+    "tags": [
+      {
+        "name": "@ui",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      }
+    ]
+  }
+]

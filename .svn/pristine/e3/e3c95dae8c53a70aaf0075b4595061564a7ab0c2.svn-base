@@ -1,0 +1,21 @@
+$(document).ready(function() {
+CucumberHTML.timelineItems.pushArray([
+  {
+    "id": "cd4bcc63-3fb6-4144-a745-cfbbadf2d807",
+    "feature": "End to End Intervention feature",
+    "scenario": "To verify the e2e flow with company login of intervention functionality",
+    "start": 1719404616572,
+    "group": 1,
+    "content": "",
+    "tags": "@ui,@e2eflow,",
+    "end": 1719404708074,
+    "className": "failed"
+  }
+]);
+CucumberHTML.timelineGroups.pushArray([
+  {
+    "id": 1,
+    "content": "Thread[main,5,main]"
+  }
+]);
+});

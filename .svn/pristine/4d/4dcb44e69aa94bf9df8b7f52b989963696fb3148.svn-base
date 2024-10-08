@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="72.674">
+<testcase classname="Administration page feature" name="To verify the companies page functionality" time="72.311">
+<system-out><![CDATA[Given User is on the login page.............................................passed
+And User logs into the intervention application using the username and password provided in a spreadsheet named "Companies" at the specified 0.passed
+And User clicks on the Sign In button in a spreadsheet named "Companies" at the specified 0.passed
+And User creates new companies from given sheetname "Companies" and rownumber 0.passed
+And User view the existing company details from given sheetname "Companies" and rownumber 0.passed
+And User edit the existing company from given sheetname "Companies" and rownumber 0.passed
+Then User delete the updated comapny........................................passed
+]]></system-out>
+</testcase>
+</testsuite>

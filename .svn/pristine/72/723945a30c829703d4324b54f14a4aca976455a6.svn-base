@@ -1,0 +1,724 @@
+package pageobjects;
+
+import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
+import java.io.IOException;
+import java.util.List;
+import java.util.Map;
+
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import io.cucumber.java.Scenario;
+import utility.ExcelReader;
+
+public class NewInterventionPage {
+	
+	public WebDriver driver;
+	Scenario scn;
+	WebDriverWait wait;
+	
+	String path = System.getProperty("user.dir")+"//xls//Intervation.xlsx";
+	ExcelReader reader = new ExcelReader();
+	
+	String importexcel = System.getProperty("user.dir")+"\\xls\\Import_From_Excel.xlsx";
+	
+	
+		// TODO Auto-generated method stub
+
+	
+	
+//============= Locators for WebElements on Landing page============================================//
+	
+	@FindBy(id = "drps__Company__Intervention")
+	WebElement company;
+	
+	@FindBy(id = "drps__ContactPerson__Intervention")
+	WebElement contactperson;
+
+	@FindBy(id = "drps__Project__Intervention")
+	WebElement project;
+	
+	@FindBy(id = "drps__InterventionType__Intervention")
+	WebElement interventiontype;
+	
+	
+
+	@FindBy(css = ".p-toast-detail")
+	WebElement msg;
+
+	@FindBy(xpath = "//button[@class='p-element p-button-outlined p-button p-component']")
+	WebElement saveandadd_btn;
+	
+	
+	@FindBy(id = "drps__TimeSpent__Intervention")
+	WebElement timespent;
+	
+	@FindBy(xpath = "//textarea[@formcontrolname='description']")
+	WebElement description1;
+
+	@FindBy(xpath = "//textarea[@formcontrolname='description2']")
+	WebElement description2;
+	
+	
+	@FindBy(xpath="//p-checkbox[@formcontrolname='isCharged']")
+	WebElement Chk_Type_IsCharged;
+	
+	@FindBy(xpath = "//button[@class='p-element p-button-danger p-button p-component']")
+	WebElement reset_btn;
+	
+	
+	@FindBy(id = "btn_Save__Intervention")
+	WebElement save_btn;
+	
+	
+	@FindBy(xpath = "//button[@label='Import from Excel']")
+	WebElement import_btn;
+
+	@FindBy(id="menu_Interventions")
+	WebElement leftMenu_intervention;
+	
+	@FindBy(id="menu_InterventionOverview")
+	WebElement leftmenu_overview;
+	
+	@FindBy(id="btn_add__Overview")
+	WebElement btn_NewIntervention;
+	
+	@FindBy(id="btn_Save&Add__Intervention")
+	WebElement btn_SaveandNew;
+	
+	
+@FindBy(xpath = "//button[@id='btn_dlt__Overview']")
+WebElement delete_btn;	
+	
+	@FindBy (xpath="//ul/p-dropdownitem/li")
+	List <WebElement> drps_Company;
+	
+	@FindBy (xpath="//ul/p-dropdownitem/li")
+	List <WebElement> drps_ContactPerson;
+	@FindBy (xpath="//ul/p-dropdownitem/li")
+	List <WebElement> drps_Project;
+	@FindBy (xpath="//ul/p-dropdownitem/li")
+	List <WebElement> drps_InterventionType;
+	
+	@FindBy (xpath="//ul/p-dropdownitem/li")
+	List <WebElement> drps_timespent;
+	
+	
+
+	@FindBy (xpath="//ul[@role='listbox']//li")
+	List <WebElement> drps_filterCompany;
+	
+	
+	@FindBy (xpath="//ul[@role='listbox']//li")
+	List <WebElement> drps_Companyfilter;
+	
+	@FindBy(xpath="//input[@id='txt__Contact_Persons__Name']")
+	WebElement filter_Company;
+
+	@FindBy(id="txt____Password")
+	WebElement txt_editLoginPassword;
+	
+	@FindBy(id="btn_sub__")
+	WebElement btn_editSaveLogin;
+	
+	@FindBy(xpath="//tbody//tr//td[2]//button//span")
+	WebElement btn_speedDial;
+	
+	
+	@FindBy(id="spd_btn_edt__Overview__0")
+	WebElement btn_edit_Overview;
+	
+	@FindBy(id="spd_btn_dtl__Overview__0")
+	WebElement btn_view_Overview;
+	
+	
+	@FindBy(id="spd_btn_del__Overview__0")
+	WebElement btn_delete;
+	
+	@FindBy(id="txt____Name")
+	WebElement txt_editUrlName;
+	
+	
+	@FindBy(id="txta_Description1__Intervention")
+	WebElement txt_editUrlDescription;
+	
+	@FindBy(id="btn_Save__Intervention")
+	WebElement btn_editupdate;
+	
+	@FindBy(css=".p-badge")
+	WebElement btn_ClearFilter;
+  	
+	@FindBy(xpath="//span[text()='Yes']")
+	 WebElement btn_delete_yes;
+	   
+	 @FindBy(xpath="//button[contains(@class,'p-dialog-header-icon p-dialog-header-maximize p-link ng-star-inserted')]")
+	  WebElement btn_close;
+	
+	
+//============= Constructor ========================================================================//
+	public NewInterventionPage (WebDriver driver,Scenario scn)
+	{
+		this.driver= driver;
+		this.scn=scn;
+		
+		PageFactory.initElements(driver, this);
+	}
+	
+
+	
+public void ClickOn_Intervention_LeftMenu() throws IOException {
+		
+		utility.Wait.clickOn(driver, leftMenu_intervention, 30);
+		
+		scn.log("Clicked on Intervention");
+	
+	      }
+
+public void ClickOn_Overview() {
+		utility.Wait.clickOn(driver, leftmenu_overview, 30);
+		
+		scn.log("Clicked on Overview");
+	    
+}
+
+public void  ClickOnNewInterventionyButton() {
+		
+
+		utility.Wait.clickOn(driver, btn_NewIntervention, 30);
+
+		scn.log("Clicked on New Intervention");
+		   }
+	
+	
+public void ClickOn_AdvanceFilter() {
+	utility.Wait.clickOn(driver, leftmenu_overview, 30);
+	
+	scn.log("Clicked on Overview");
+    
+}
+
+
+
+
+
+	
+public void clickAndSelectDropdown(WebElement DropdownElement, String drpdownValue) throws InterruptedException, Exception, IOException {
+		
+		utility.Wait.clickOn(driver, DropdownElement, 2000);
+		
+		utility.Wait.untilvisible(driver, driver.findElement(By.cssSelector(".p-dropdown-filter.p-inputtext.p-component")), 5000);
+	    WebElement search_company = driver.findElement(By.cssSelector(".p-dropdown-filter.p-inputtext.p-component"));
+		search_company.sendKeys(drpdownValue) ; 
+		
+		List<WebElement> txt_filter = driver.findElements(By.xpath("//div[@class='p-dropdown-items-wrapper']//li"));
+		//System.out.println("GetTxt=="+txt_filter.size());
+		
+		for (int i = 0; i <= txt_filter.size(); i++) {
+			String drp_value = txt_filter.get(i).getText();
+			System.out.println("GetTxt=="+drp_value);
+			if (drp_value.equalsIgnoreCase(drpdownValue)) {
+	
+				txt_filter.get(i).click();
+			
+				//Thread.sleep(5000);
+				break; 
+			}
+		}
+	
+	
+	}
+		
+	
+
+
+public void Dropdown_Search(List <WebElement> element, String Text) {
+	try {
+	
+for (int i=0;i<=element.size()-1;i++) {
+	Thread.sleep(2000);
+	WebElement singleElement = element.get(i);
+	utility.Wait.untilvisible(driver, singleElement, 2000);  
+
+	String singleText = singleElement.getText();
+
+	  if(singleText.equalsIgnoreCase(Text)) {
+		  Thread.sleep(1500);
+		  singleElement.click(); 
+		  
+		  
+	  }
+	}
+	}
+	catch(Exception e) {
+		System.out.println(e.getMessage());
+	}
+ }
+	
+	 public void clickOnSaveAndNew() throws Exception
+	    {
+	    	
+		 JavascriptExecutor executor = (JavascriptExecutor)driver;
+    	 executor.executeScript("arguments[0].click();", btn_SaveandNew);
+    	 scn.log("Clicked on save new company");
+    	 Thread.sleep(1000);
+    	 
+    	 //
+    	 try {
+    	 String actualText=msg.getText();
+    	    Thread.sleep(1500);
+    	     String expectedText = "Intervention added successfully.";
+    	     Assert.assertEquals(actualText,expectedText);
+    	     System.out.println("Toast message after click on save button :"   +actualText);
+    	     scn.log("Toast message after click on save button : " + actualText);
+    	     
+    	     Thread.sleep(1500);
+    	     
+    		} catch (InterruptedException e) {
+    			e.printStackTrace();
+    		} 	 
+ 
+	    }
+	 
+	 public void clickOnSave() throws Exception
+	    {
+	    	
+		 JavascriptExecutor executor = (JavascriptExecutor)driver;
+    	 executor.executeScript("arguments[0].click();", save_btn);
+    	 scn.log("Clicked on save new company");
+    	 Thread.sleep(1000);
+    	 
+    	 //
+    	 try {
+    	 String actualText=msg.getText();
+    	    Thread.sleep(1500);
+    	     String expectedText = "Intervention added successfully.";
+    	     Assert.assertEquals(actualText,expectedText);
+    	     System.out.println("Toast message after click on save button :"   +actualText);
+    	     scn.log("Toast message after click on save button : " + actualText);
+    	     
+    	     Thread.sleep(1500);
+    	     
+    		} catch (InterruptedException e) {
+    			e.printStackTrace();
+    		} 	 
+ 
+	    }
+	    	
+	     	 
+	 public void clickOnReset()
+	    {
+	    	
+	    	JavascriptExecutor A = (JavascriptExecutor) driver;
+			A.executeScript("arguments[0].click();",reset_btn  );
+	    	scn.log("Clicked on Reset");
+	    }
+	
+	 public void ImportExcel() throws Exception
+	    {
+			
+		 System.out.println(importexcel);
+			Thread.sleep(1000);
+			import_btn.click();
+			Robot rb =new Robot();
+			 rb.delay(1000);
+			//PUT PATH OF FILE IN CLIBBOARD
+			StringSelection ss=new StringSelection(importexcel);
+			Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
+			//CTRL+V
+			rb.keyPress(KeyEvent.VK_CONTROL); //PRESS ON CONTROL KEY
+			rb.keyPress(KeyEvent.VK_V);
+			rb.delay(1000);
+			rb.keyRelease(KeyEvent.VK_CONTROL);
+			rb.keyRelease(KeyEvent.VK_V);
+			rb.delay(1000);
+			//enter key press
+			rb.keyPress(KeyEvent.VK_ENTER);
+			rb.keyRelease(KeyEvent.VK_ENTER);
+			Thread.sleep(1000);
+
+//         try {
+//        	 Thread.sleep(2000);
+//	    	    String actualText=msg.getText();
+//	    	    
+//	    	    System.out.println(actualText);
+//	    	    Thread.sleep(2000);
+//	    	     String expectedText ="Imported successfully.";
+//	    	     
+//	    	     Assert.assertEquals(actualText,expectedText);
+//	    	     
+//	    	     scn.log("Toast message after click On click On Import from Excel : " + actualText);
+//	    	    System.out.println("Assert passed");
+//	    	     Thread.sleep(2000);
+//	    		} catch (InterruptedException e) {
+//	    			e.printStackTrace();
+//	    		} 
+         }
+	 
+			
+	 public void TextFilter_Intervention_date(String sheetName, int RowNumber) throws Exception {
+			
+	 Thread.sleep(1500);
+	 List<Map<String,String>> testData = reader.getData(path, sheetName);
+//		 
+//		 utility.Wait.clickOn(driver, driver.findElement(By.xpath("//p-multiselect[@id='drpm__Overview__Company']")), 3000);
+//			
+//			Thread.sleep(2000);
+//			utility.Wait.untilvisible(driver, driver.findElement(By.cssSelector(".p-multiselect-filter-container.ng-star-inserted")), 3000);
+			WebElement filter_date = driver.findElement(By.xpath("//input[@placeholder='Date']"));
+			
+			filter_date.sendKeys("05062024");
+			//Dropdown_Search(drps_filterCompany, testData.get(rowNumber).get("Company"));
+			
+		//	scn.log("Enter filter date is: "+testData.get(RowNumber).get("Filter_Date"));
+			 Thread.sleep(1500);
+//			WebElement close = driver.findElement(By.xpath("//timesicon[@class='p-element p-icon-wrapper ng-star-inserted']"));
+//
+//	        close.click();
+//	        Thread.sleep(1000);
+		
+	        
+	  } 
+	 
+	 
+	 
+	 
+	 public void Overview_selectmultiple_checkbox() throws InterruptedException {
+		 
+		 List<WebElement> checkboxes= driver.findElements(By.xpath("//p-tablecheckbox[starts-with(@id,chk__Overview__)]"));
+         System.out.println("Total no of checkboxes:"+checkboxes.size());
+         Thread.sleep(3000);
+         
+        //utility.Wait.untilvisible_List(driver, driver.findElements(By.xpath("//p-tablecheckbox[starts-with(@id,chk__Overview__)]")),3000);
+	
+		 for(int i=0;i<checkboxes.size();i++)
+			 
+		 {
+		 
+		if(checkboxes.get(i).getAttribute("id").equalsIgnoreCase("chk__Overview__0")||checkboxes.get(i).getAttribute("id").equalsIgnoreCase("chk__Overview__2") )
+		{
+		 
+		checkboxes.get(i).click();
+		 
+		 }
+	}}
+	 
+	 
+	 public void Overview_Deletepopup_ClickOnYesButton() throws Exception {
+		  
+			delete_btn.click();
+			 Thread.sleep(2000);
+			WebElement deletePopupTxt = driver.findElement(By.cssSelector(".p-confirm-dialog-message"));
+			String Text = deletePopupTxt.getText();
+			//ExtentTestManager.reporterLog(Text);
+			System.out.println(Text);
+			WebElement btn_deleteYes = driver.findElement(By.xpath("//span[normalize-space()='Yes']"));
+		   utility.Wait.clickOn(driver, btn_deleteYes, 20);
+			//ExtentTestManager.reporterLog("Clicked on delete button");
+		  
+		try {
+			
+		    String actualText=msg.getText();
+		    Thread.sleep(3000);
+		     String expectedText = "Data deleted successfully.";
+		     
+		     Assert.assertEquals(actualText,expectedText);
+		     
+		    scn.log("Toast message after clicked on yes button : " + actualText);
+		    System.out.println("Assert passed");
+		     Thread.sleep(2000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		   }
+
+	 
+	 
+	 
+			
+public void Create_New_Intervention(String sheetName, int RowNumber) throws Exception {
+	
+	List<Map<String,String>> testData = reader.getData(path, sheetName);
+    utility.Wait.clickOn(driver, driver.findElement(By.xpath("//p-dropdown[@id='drps__Company__Intervention']/div/span")), 3000);
+	//Thread.sleep(2000);
+	utility.Wait.untilvisible(driver, driver.findElement(By.cssSelector(".p-dropdown-filter.p-inputtext")), 3000);
+	WebElement search_Company = driver.findElement(By.cssSelector(".p-dropdown-filter.p-inputtext"));
+	search_Company.sendKeys(testData.get(RowNumber).get("Company"));
+	Dropdown_Search(drps_Company, testData.get(RowNumber).get("Company"));
+	scn.log("Selected comapany is: "+testData.get(RowNumber).get("Company"));
+	
+	Thread.sleep(2000);
+	utility.Wait.clickOn(driver, driver.findElement(By.xpath("//p-dropdown[@id='drps__ContactPerson__Intervention']/div/span")), 3000);
+	//Thread.sleep(2000);
+	utility.Wait.untilvisible(driver, driver.findElement(By.cssSelector(".p-dropdown-filter.p-inputtext")), 3000);
+	WebElement search_contactperson = driver.findElement(By.cssSelector(".p-dropdown-filter.p-inputtext"));
+	search_contactperson.sendKeys(testData.get(RowNumber).get("Contact_person"));
+	Dropdown_Search(drps_ContactPerson, testData.get(RowNumber).get("Contact_person"));
+	scn.log("Selected Contact person is: "+testData.get(RowNumber).get("Contact_person"));
+	Thread.sleep(2000);
+
+	utility.Wait.clickOn(driver, driver.findElement(By.xpath("//p-dropdown[@id='drps__Project__Intervention']/div/span")), 3000);
+	Thread.sleep(2000);
+	utility.Wait.untilvisible(driver, driver.findElement(By.cssSelector(".p-dropdown-filter.p-inputtext")), 3000);
+	WebElement search_Project  = driver.findElement(By.cssSelector(".p-dropdown-filter.p-inputtext"));
+	search_Project.sendKeys(testData.get(RowNumber).get("Project"));
+	Dropdown_Search(drps_Project, testData.get(RowNumber).get("Project"));
+	scn.log("Selected Project is: "+testData.get(RowNumber).get("Project"));
+	Thread.sleep(2000);
+	utility.Wait.clickOn(driver, driver.findElement(By.xpath("//p-dropdown[@id='drps__InterventionType__Intervention']/div/span")), 3000);
+	Thread.sleep(2000);
+	utility.Wait.untilvisible(driver, driver.findElement(By.cssSelector(".p-dropdown-filter.p-inputtext")), 3000);
+	WebElement search_Interventiontype  = driver.findElement(By.cssSelector(".p-dropdown-filter.p-inputtext"));
+	search_Interventiontype.sendKeys(testData.get(RowNumber).get("Intervention_type"));
+	Dropdown_Search(drps_InterventionType, testData.get(RowNumber).get("Intervention_type"));
+	scn.log("Selected Project is: "+testData.get(RowNumber).get("Intervention_type"));
+	
+
+	utility.Wait.clickOn(driver, driver.findElement(By.xpath("//p-dropdown[@id='drps__TimeSpent__Intervention']/div/span")), 3000);
+	Thread.sleep(2000);
+	utility.Wait.untilvisible(driver, driver.findElement(By.cssSelector(".p-dropdown-filter.p-inputtext")), 3000);
+	WebElement search_timespent  = driver.findElement(By.cssSelector(".p-dropdown-filter.p-inputtext"));
+	search_timespent.sendKeys(testData.get(RowNumber).get("Time_spent"));
+	Dropdown_Search(drps_timespent, testData.get(RowNumber).get("Time_spent"));
+	scn.log("Selected Time spent is: "+testData.get(RowNumber).get("Time_spent"));
+	Thread.sleep(2000);
+	
+
+  	if(testData.get(RowNumber).get("Chk_Type_IsCharged").equalsIgnoreCase("Yes")) {
+  		Chk_Type_IsCharged.click();
+		Thread.sleep(1000);
+	}
+	
+	else {
+		
+		scn.log("Is Non Charged");
+		System.out.println("Is Non Charged");
+	} 	
+  	
+  	
+  	description1.sendKeys(testData.get(RowNumber).get("Description 1"));
+
+	scn.log("Entered description 1 :" +testData.get(RowNumber).get("Description 1"));
+	Thread.sleep(2000);
+	description2.sendKeys(testData.get(RowNumber).get("Description 2"));
+
+	scn.log("Entered description 2 :" +testData.get(RowNumber).get("Description 2"));
+  	
+	Thread.sleep(2000);
+  	
+  	
+  	
+}
+	
+
+public void TextFilter_Intervention(String sheetName, int rowNumber) throws Exception {
+	
+	 Thread.sleep(1500);
+	 List<Map<String,String>> testData = reader.getData(path, sheetName);
+	 
+	 utility.Wait.clickOn(driver, driver.findElement(By.xpath("//p-multiselect[@id='drpm__Overview__Company']")), 3000);
+		
+		Thread.sleep(2000);
+		utility.Wait.untilvisible(driver, driver.findElement(By.cssSelector(".p-multiselect-filter-container.ng-star-inserted")), 3000);
+		WebElement filter_Company = driver.findElement(By.xpath("//input[@role='textbox']"));
+		filter_Company.sendKeys(testData.get(rowNumber).get("Company"));
+		Dropdown_Search(drps_filterCompany, testData.get(rowNumber).get("Company"));
+		
+		scn.log("Enter filter comapany is: "+testData.get(rowNumber).get("Company"));
+		
+		WebElement close = driver.findElement(By.xpath("//timesicon[@class='p-element p-icon-wrapper ng-star-inserted']"));
+
+        close.click();
+        Thread.sleep(1000);
+	
+        
+  }
+
+ public void TextFilter_afterEdit_Intervention(String sheetName, int rowNumber) throws Exception {
+	  Thread.sleep(1500);
+	  
+	  
+	  utility.Wait.untilvisible(driver, btn_ClearFilter, 90);
+	  utility.Wait.clickOn(driver, btn_ClearFilter, 50);
+	   List<Map<String,String>> testData = reader.getData(path, sheetName);
+	
+
+	    utility.Wait.clickOn(driver, driver.findElement(By.xpath("//p-multiselect[@id='drpm__Overview__Company']")), 3000);
+		
+		Thread.sleep(2000);
+		utility.Wait.untilvisible(driver, driver.findElement(By.cssSelector(".p-multiselect-filter-container.ng-star-inserted")), 3000);
+		WebElement filter_Company = driver.findElement(By.xpath("//input[@role='textbox']"));
+		filter_Company.sendKeys(testData.get(rowNumber).get("Filter_Company"));
+		Dropdown_Search(drps_filterCompany, testData.get(rowNumber).get("Filter_Company"));
+		
+		scn.log("Enter filter comapany is: "+testData.get(rowNumber).get("Filter_Company"));
+		
+		WebElement close = driver.findElement(By.xpath("//timesicon[@class='p-element p-icon-wrapper ng-star-inserted']"));
+
+        close.click();
+        Thread.sleep(1000);
+        
+		//filter_Url.sendKeys(testData.get(rowNumber).get("Edit_Name_ToUrl"),Keys.TAB);
+		scn.log("Filtered To company After edit");
+	  
+ }
+ 
+ 
+public void edit_ClickOnSpeedDialButton() {
+try {
+	Thread.sleep(2000);
+} catch (InterruptedException e) {	
+	e.printStackTrace();
+}
+utility.Wait.untilvisible(driver, btn_speedDial, 150);
+	  utility.Wait.clickOn(driver, btn_speedDial, 60);
+	  scn.log("Clicked on SpeedDial button");
+ }
+ 
+ public void ClickOnEditButtonOnSpeedDial() {
+
+	utility.Wait.clickOn(driver, btn_edit_Overview, 90);
+	  System.out.println("Click on edit to overview");
+	  scn.log("Clicked on edit tooverview");
+ }   
+
+ 
+ public void ClickOnViewButtonOnSpeedDial() {
+
+		utility.Wait.clickOn(driver, btn_view_Overview, 90);
+		  System.out.println("Click on view to overview");
+		  scn.log("Clicked on view to overview");
+	  }   
+ 
+
+ public void ClickOnClose() {
+
+		utility.Wait.clickOn(driver, btn_close, 90);
+		  System.out.println("Click on close ");
+		  scn.log("Clicked on close ");
+	  }   
+ 
+ public  void edit_enter_new_InterventionDescription1 (String sheetName, int RowNumber) throws InvalidFormatException, IOException {
+	List<Map<String,String>> testData = reader.getData(path, sheetName); 	
+	utility.Wait.clickOn(driver, txt_editUrlDescription, 40);
+	txt_editUrlDescription.clear(); 
+	txt_editUrlDescription.sendKeys(testData.get(RowNumber).get("Edit_description 1"));
+ 	scn.log("Enter Updated/edited to description : " +testData.get(RowNumber).get("Edit_description 1"));	  	
+ }
+ 
+// public void edit_enter_newToUrlDescription(String sheetName, int rowNumber) throws Exception {
+//	List<Map<String,String>> testData = reader.getData(path, sheetName); 
+//
+// 	utility.Wait.clickOn(driver, txt_editUrlDescription, 40);
+// 	txt_editUrlDescription.clear();
+// 	txt_editUrlDescription.sendKeys(testData.get(rowNumber).get("Edit_Description_ToUrl"));
+//	scn.log("Enter Updated/edited to url description : " +testData.get(rowNumber).get("Edit_Description_ToUrl"));
+//	Thread.sleep(1500);
+// }
+
+ public void edit_ClickOnUpdate () {
+	  utility.Wait.clickOn(driver, btn_editupdate, 50);
+	
+	scn.log("Clicked on Save");
+	
+	//==============assertion==================
+  	 try {
+  		 Thread.sleep(1000);
+  	 String actualText=msg.getText();
+  	    Thread.sleep(1500);
+  	     String expectedText = "Intervention updated successfully.";
+  	     Assert.assertEquals(actualText,expectedText);
+  	     System.out.println("Toast message after click on save button :"   +actualText);
+  	   scn.log("Toast message after click on save button : " + actualText);
+  	     
+  	     Thread.sleep(1500);
+  	     
+  		} catch (InterruptedException e) {
+  			e.printStackTrace();
+  		} 		
+
+ }
+ 
+ public void clickOnClearFilter() {
+
+	  utility.Wait.untilvisible(driver, btn_ClearFilter, 90);
+	  utility.Wait.clickOn(driver, btn_ClearFilter, 50);
+	  
+ }
+ 
+ 
+ public void ClickOnDeleteButtonOnSpeedDial() {		  
+		 utility.Wait.clickOn(driver, btn_delete, 300); 
+		 System.out.println("Click on delete button");  
+		 scn.log("Clicked on delete  button");
+	  }
+ 
+ 
+ public void delete_Record_yes() {
+	  	
+		try {
+			Thread.sleep(1500);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+			utility.Wait.clickOn(driver, btn_delete_yes, 100);
+			
+			scn.log("Clicked on Yes button on Confirmation popup message.");
+			
+			try {Thread.sleep(1500);
+			   	 String actualText=msg.getText();
+			   	    Thread.sleep(1500);
+			   	     String expectedText = "Data deleted successfully.";
+			   	     Assert.assertEquals(actualText,expectedText);
+			   	     System.out.println("Toast message after clicked on yes button :"   +actualText);
+			   	      scn.log("Toast message after clicked on yes button : " + actualText);
+			   	     
+			   	     Thread.sleep(1500);
+			   	     
+			   		} catch (InterruptedException e) {
+			   			e.printStackTrace();
+			   		} 					
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+

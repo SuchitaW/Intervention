@@ -1,0 +1,330 @@
+package pageobjects;
+
+import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
+import java.io.IOException;
+import java.util.List;
+import java.util.Map;
+
+import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import io.cucumber.java.Scenario;
+import utility.ExcelReader;
+
+public class NewInterventionPage {
+	
+	public WebDriver driver;
+	Scenario scn;
+	WebDriverWait wait;
+	
+	String path1 = System.getProperty("user.dir")+"//xls//Intervation.xlsx";
+	ExcelReader reader = new ExcelReader();
+	
+	String importexcel = System.getProperty("user.dir")+"\\xls\\Report.xlsx";
+	
+	
+		// TODO Auto-generated method stub
+
+	
+	
+//============= Locators for WebElements on Landing page============================================//
+	
+	@FindBy(xpath = "//app-generic-dropdown[@formcontrolname='companyId']//div[@class='p-dropdown p-component']//span")
+	WebElement company;
+	
+	@FindBy(xpath = "//app-generic-dropdown[@formcontrolname='contactId']//div[@class='p-dropdown p-component']//span")
+	WebElement contactperson;
+
+	@FindBy(xpath = "//app-generic-dropdown[@formcontrolname='projectId']//div[@class='p-dropdown p-component']//span")
+	WebElement project;
+	
+	@FindBy(xpath = "//app-generic-dropdown[@formcontrolname='programId']//div[@class='p-dropdown p-component']//span")
+	WebElement interventiontype;
+
+	@FindBy(css = ".p-toast-detail")
+	WebElement msg;
+
+	@FindBy(xpath = "//button[@class='p-element p-button-outlined p-button p-component']")
+	WebElement saveandadd_btn;
+	
+	
+	@FindBy(xpath = "//p-dropdown[@class='p-element p-inputwrapper p-inputwrapper-filled ng-untouched ng-dirty ng-valid']")
+	WebElement timespent;
+	
+	@FindBy(xpath = "//textarea[@formcontrolname='description']")
+	WebElement description1;
+
+	@FindBy(xpath = "//textarea[@formcontrolname='description2']")
+	WebElement description2;
+	
+	
+	@FindBy(xpath="//p-checkbox[@formcontrolname='isCharged']")
+	WebElement Chk_Type;
+	
+	@FindBy(xpath = "//button[@class='p-element p-button-danger p-button p-component']")
+	WebElement reset_btn;
+	
+	
+	@FindBy(xpath = "(//button[@type='button'])[7]")
+	WebElement save_btn;
+	
+	@FindBy(xpath = "//button[@label='Import from Excel']")
+	WebElement import_btn;
+
+
+//============= Constructor ========================================================================//
+	public NewInterventionPage (WebDriver driver,Scenario scn)
+	{
+		this.driver= driver;
+		this.scn=scn;
+		
+		PageFactory.initElements(driver, this);
+	}
+	
+
+	
+	public void clickAndSelectDropdown(WebElement DropdownElement, String drpdownValue) throws InterruptedException, Exception, IOException {
+		
+		utility.Wait.clickOn(driver, DropdownElement, 2000);
+		
+		utility.Wait.untilvisible(driver, driver.findElement(By.cssSelector(".p-dropdown-filter.p-inputtext.p-component")), 5000);
+	    WebElement search_company = driver.findElement(By.cssSelector(".p-dropdown-filter.p-inputtext.p-component"));
+		search_company.sendKeys(drpdownValue) ; 
+		
+		List<WebElement> txt_filter = driver.findElements(By.xpath("//div[@class='p-dropdown-items-wrapper']//li"));
+		System.out.println("GetTxt=="+txt_filter.size());
+		
+		for (int i = 0; i <= txt_filter.size(); i++) {
+			String drp_value = txt_filter.get(i).getText();
+			System.out.println("GetTxt=="+drp_value);
+			if (drp_value.equalsIgnoreCase(drpdownValue)) {
+	
+				txt_filter.get(i).click();
+			
+				//Thread.sleep(5000);
+				break; 
+			}
+		}
+	
+	
+	}
+		
+	
+	public void fillNewInterventionDetails(String sheetName, Integer RowNumber) throws InterruptedException, Exception, IOException {
+		
+	List<Map<String,String>> testData = reader.getData(path1, sheetName);
+		
+	clickAndSelectDropdown(company, testData.get(RowNumber).get("Company"));	
+	scn.log("Entered company :" +testData.get(RowNumber).get("Company"));
+	
+	clickAndSelectDropdown(contactperson, testData.get(RowNumber).get("Contact person"));	
+	scn.log("Entered Contact person :" +testData.get(RowNumber).get("Contact person"));
+	
+
+	clickAndSelectDropdown(project, testData.get(RowNumber).get("Project"));
+	scn.log("Entered Project :" +testData.get(RowNumber).get("Project"));
+	Thread.sleep(4000);
+	
+	clickAndSelectDropdown(interventiontype, testData.get(RowNumber).get("Intervention type"));	
+	scn.log("Entered Intervention type :" +testData.get(RowNumber).get("Intervention type"));
+	}
+	
+	public void fillTimeSpent(String sheetName, Integer RowNumber) throws InterruptedException, Exception, IOException {
+		
+		utility.Wait.clickOn(driver, timespent, 2000);
+		List<Map<String,String>> testData = reader.getData(path1, sheetName);
+		
+		List<WebElement> drp = driver.findElements(By.xpath("//div[@class='p-dropdown-items-wrapper']//li"));
+		System.out.println(drp.size());
+		for (int i=0; i<=drp.size()-1;i++) {
+			String drp_name = drp.get(i).getText();
+			if (drp_name.equalsIgnoreCase(testData.get(RowNumber).get("Time spent")))
+			
+			{
+				drp.get(i).click();
+				break;
+			}}
+	
+
+	scn.log("Entered Time spent :" +testData.get(RowNumber).get("Time spent"));
+	
+	
+		}
+		
+public void fillDescription(String sheetName, Integer RowNumber) throws InterruptedException, Exception, IOException {
+		
+		
+	List<Map<String,String>> testData = reader.getData(path1, sheetName);
+		
+	description1.sendKeys(testData.get(RowNumber).get("Description 1"));
+
+	scn.log("Entered Time spent :" +testData.get(RowNumber).get("Description 1"));
+	
+	description2.sendKeys(testData.get(RowNumber).get("Description 2"));
+
+	scn.log("Entered Time spent :" +testData.get(RowNumber).get("Description 2"));
+	
+		}
+	
+	
+	
+	 public void clickOnSaveAndAdd()
+	    {
+	    	
+	    	JavascriptExecutor A = (JavascriptExecutor) driver;
+			A.executeScript("arguments[0].click();",saveandadd_btn  );
+	    	scn.log("Clicked on Save & Add");
+	    	
+	    	  
+	        try {
+	    		
+	    	    String actualText=msg.getText();
+	    	    Thread.sleep(2000);
+	    	     String expectedText = "Intervention added successfully.";
+	    	     
+	    	     Assert.assertEquals(actualText,expectedText);
+	    	     
+	    	    scn.log("Toast message after clicked on Save & Add button : " + actualText);
+	    	    System.out.println("Assert passed");
+	    	     Thread.sleep(2000);
+	    		} catch (InterruptedException e) {
+	    			e.printStackTrace();
+	    		}
+	    	   }
+	    	
+	 
+	 
+	 public void clickOnSave()
+	    {
+	    	
+	    	JavascriptExecutor A = (JavascriptExecutor) driver;
+			A.executeScript("arguments[0].click();",save_btn  );
+	    	scn.log("Clicked on Save");
+	    	
+	    	  
+	        try {
+	    		
+	    	    String actualText=msg.getText();
+	    	    Thread.sleep(2000);
+	    	     String expectedText = "Intervention added successfully.";
+	    	     
+	    	     Assert.assertEquals(actualText,expectedText);
+	    	     
+	    	    scn.log("Toast message after clicked on Save button : " + actualText);
+	    	    System.out.println("Assert passed");
+	    	     Thread.sleep(2000);
+	    		} catch (InterruptedException e) {
+	    			e.printStackTrace();
+	    		}
+	    	   }
+	    	
+	    	
+	 
+	 
+	 
+
+	 
+	    	
+	 public void checkbox_IsCharged(String sheetName, int RowNumber) throws Exception, IOException {
+		   	
+	    	List<Map<String,String>> testData = reader.getData(path1, sheetName);
+		    if(testData.get(RowNumber).get("Type").equalsIgnoreCase("Yes")) {
+				Chk_Type.click();
+				Thread.sleep(1000);
+			}
+			
+			else {
+				
+				scn.log("Is Non Charged");
+				System.out.println("Is Non Charged");
+			}
+		    
+	    }
+		
+		
+	 
+	 public void clickOnReset()
+	    {
+	    	
+	    	JavascriptExecutor A = (JavascriptExecutor) driver;
+			A.executeScript("arguments[0].click();",reset_btn  );
+	    	scn.log("Clicked on Reset");
+	    }
+	
+	
+	 
+	
+	 
+	 public void ImportExcel() throws Exception
+	    {
+			
+
+		 System.out.println(importexcel);
+		 
+			Thread.sleep(1000);
+			import_btn.click();
+			
+			Robot rb =new Robot();
+			rb.delay(1000);
+			//PUT PATH OF FILE IN CLIBBOARD
+			StringSelection ss=new StringSelection(importexcel);
+			Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
+			//CTRL+V
+			rb.keyPress(KeyEvent.VK_CONTROL); //PRESS ON CONTROL KEY
+			rb.keyPress(KeyEvent.VK_V);
+			rb.delay(1000);
+			rb.keyRelease(KeyEvent.VK_CONTROL);
+			rb.keyRelease(KeyEvent.VK_V);
+			rb.delay(1000);
+			//enter key press
+			rb.keyPress(KeyEvent.VK_ENTER);
+			rb.keyRelease(KeyEvent.VK_ENTER);
+			
+			//Thread.sleep(3000);
+			
+			
+			
+			
+			
+			
+//         try {
+//        	 Thread.sleep(1000);
+//	    	    String actualText=msg.getText();
+//	    	    System.out.println(actualText);
+//	    	    Thread.sleep(2000);
+//	    	     String expectedText = "Imported successfully.";
+//	    	     
+//	    	     Assert.assertEquals(actualText,expectedText);
+//	    	     
+//	    	     scn.log("Toast message after click On click On Import from Excel : " + actualText);
+//	    	    System.out.println("Assert passed");
+//	    	     Thread.sleep(2000);
+//	    		} catch (InterruptedException e) {
+//	    			e.printStackTrace();
+//	    		}
+//	    	   }
+	 
+			
+			
+			
+	
+	    }
+}
+	
+	
+	
+	
+	
+	
+	
+
+

@@ -1,0 +1,71 @@
+package stepDefs;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import core.TestContext;
+import io.cucumber.java.Scenario;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import pageobjects.AdministrationPage;
+import pageobjects.LoginPageObjects;
+import pageobjects.MasterPage;
+import pageobjects.NewInterventionPage;
+import pageobjects.OverviewPage;
+
+public class NewIntervention_StepDefs {
+private static final Logger logger = LogManager.getLogger(NewIntervention_StepDefs.class);
+	WebDriver driver;
+	TestContext testContext;
+	WebDriverWait wait;
+	Scenario scn;
+	//=======================================
+	
+	LoginPageObjects loginPageObjects;
+	NewInterventionPage newInterventionPage;
+	AdministrationPage administrationPage;
+	MasterPage masterPage;
+	OverviewPage overviewPage ;
+	
+	//==============================================
+	public NewIntervention_StepDefs(TestContext testContext) {
+		this.testContext = testContext;
+		driver = testContext.getDriver();
+		wait = testContext.getWebDriverWait();
+		scn = testContext.getScenario();
+		loginPageObjects= new LoginPageObjects(driver, scn);
+        administrationPage=new AdministrationPage(driver, scn);
+		masterPage =new MasterPage(driver, scn);
+		overviewPage =new OverviewPage (driver, scn);
+		newInterventionPage=new NewInterventionPage(driver, scn);
+	}
+
+//=========================================================================
+	
+
+
+@Given("User fill the new intervention details from given spreadsheet named {string} at the specified {int}")
+public void user_fill_the_new_intervention_details_from_given_spreadsheet_named_at_the_specified(String sheetName, Integer RowNumber) throws Exception {
+   //interventionPageObjects.clickOnReset();
+	
+	
+	newInterventionPage.ImportExcel();
+	newInterventionPage.fillNewInterventionDetails(sheetName, RowNumber);
+	newInterventionPage.fillTimeSpent(sheetName, RowNumber);
+	newInterventionPage.checkbox_IsCharged(sheetName, RowNumber);
+	newInterventionPage.fillDescription(sheetName, RowNumber);
+	
+}
+
+
+@Then("User click on save and add")
+public void user_click_on_save_and_add() throws Exception {
+	newInterventionPage.clickOnSaveAndAdd();
+	//newInterventionPage.clickOnSave();
+     //loginPageObjects.capturePassScreenshot(scn);
+     
+}
+}
+

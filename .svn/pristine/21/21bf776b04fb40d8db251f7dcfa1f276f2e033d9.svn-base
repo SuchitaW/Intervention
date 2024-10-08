@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="24.538">
+<testcase classname="Administration page feature" name="To verify the companies page functionality" time="24.184">
+<failure message="The scenario has pending or undefined step(s)" type="io.cucumber.java.PendingException"><![CDATA[Given User is on the login page.............................................passed
+And User logs into the intervention application using the username and password provided in a spreadsheet named "Company" at the specified 0.passed
+And User clicks on the Sign In button in a spreadsheet named "Company" at the specified 0.passed
+And User creates new companies from given sheetname "Company" and rownumber 0.passed
+And User view the existing company details from given sheetname "Company" and rownumber 0.pending
+And User edit the existing company from given sheetname "Company" and rownumber 0.skipped
+Then User delete the updated comapny........................................skipped
+]]></failure>
+</testcase>
+</testsuite>

@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">Grasshopper Report</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Oct 1, 2024 05:07:48 PM</span></a>
+<a href="#"><span class="badge badge-primary">Oct 9, 2024 01:46:16 PM</span></a>
 </li>
 </ul>
 </div>
@@ -71,13 +71,13 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Oct 1, 2024 05:07:48 PM</h3>
+<h3>Oct 9, 2024 01:46:16 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Oct 1, 2024 05:53:59 PM</h3>
+<h3>Oct 9, 2024 02:28:09 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -148,9 +148,9 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='33%'><b>3</b> steps passed</small></div>
+<div><small data-tooltip='22%'><b>2</b> steps passed</small></div>
 <div>
-<small data-tooltip='11%'><b>1</b> steps failed,
+<small data-tooltip='22%'><b>2</b> steps failed,
 <b>5</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
@@ -167,7 +167,7 @@
 </div></div>
 <script>
 var timeline = {
-"Login page feature":2769.952
+"Login page feature":2511.761
 };
 </script>
 <div class="row">
@@ -238,8 +238,8 @@ warningChild: 0,
 skipChild: 0,
 infoChild: 0,
 grandChildCount: 5,
-passGrandChild: 3,
-failGrandChild: 1,
+passGrandChild: 2,
+failGrandChild: 2,
 warningGrandChild: 0,
 skipGrandChild: 5,
 infoGrandChild: 0,
@@ -276,7 +276,7 @@ eventsCount: 5,
           <div class="test-detail">
             <p class="name">Login page feature</p>
             <p class="text-sm">
-              <span>17:07:49 PM</span> / <span>00:46:09:952</span>
+              <span>13:46:17 PM</span> / <span>00:41:51:761</span>
               <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
@@ -285,9 +285,9 @@ eventsCount: 5,
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-fail">Login page feature</h5>
-<span class='badge badge-success'>10.01.2024 17:07:49</span>
-<span class='badge badge-danger'>10.01.2024 17:53:59</span>
-<span class='badge badge-default'>00:46:09:952</span>
+<span class='badge badge-success'>10.09.2024 13:46:17</span>
+<span class='badge badge-danger'>10.09.2024 14:28:09</span>
+<span class='badge badge-default'>00:41:51:761</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 </div>
 <div class="m-t-10 m-l-5"></div>
@@ -298,9 +298,6 @@ eventsCount: 5,
     <div class="card-header" role="tab">
       <div class="card-title">
         <div class="node" id="2"><span class="badge log fail-bg mr-2">Fail</span>Validate export to excel in Overview screen functionality</div>
-          <div class="status-avatar float-right mr-4">
-            <i class="fa fa-paperclip"></i>
-          </div>
       </div>
     </div>
         <div class="scenario_outline ">
@@ -308,9 +305,6 @@ eventsCount: 5,
               <div class="card-header">
                 <div class="card-title outline-child">
                   <div class="node" id="3"><span class="badge log fail-bg mr-2">Fail</span>Validate export to excel in Overview screen functionality</div>
-                    <div class="status-avatar float-right">
-                      <i class="fa fa-paperclip"></i>
-                    </div>
                 </div>
               </div>
               <div class="card-body mt-3 ">
@@ -324,15 +318,14 @@ eventsCount: 5,
                   <div class="step fail-bg">
                     <span>Given User is on the login page</span>
       <div>
-        <textarea disabled class="code-block">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//button[normalize-space()='I agree']"}
-  (Session info: chrome=129.0.6668.60)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+        <textarea disabled class="code-block">org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=129.0.6668.90)
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'XSSPC07', ip: '10.10.222.97', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_202'
+System info: host: 'XSSPC07', ip: '10.10.222.101', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_202'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.60, chrome: {chromedriverVersion: 129.0.6668.70 (df87d5cf12b1..., userDataDir: C:\Users\SUCHIT~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61160}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 2dc8e945e40eb6bcecdf9adbcd0454e9
-*** Element info: {Using=xpath, value=//button[normalize-space()='I agree']}
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.90, chrome: {chromedriverVersion: 129.0.6668.91 (b00bc8b76d60..., userDataDir: C:\Users\SUCHIT~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53137}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 83bd8c7cc964472ac4cb954f4cdff3b2
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -343,24 +336,9 @@ Session ID: 2dc8e945e40eb6bcecdf9adbcd0454e9
 	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy24.getWrappedElement(Unknown Source)
-	at org.openqa.selenium.remote.internal.WebElementToJsonConverter.apply(WebElementToJsonConverter.java:50)
-	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
-	at java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948)
-	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
-	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
-	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
-	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
-	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:484)
-	at pageobjects.LoginPageObjects.clickOnIagree(LoginPageObjects.java:133)
-	at stepDefs.Login_StepDefs.user_is_on_the_login_page(Login_StepDefs.java:56)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:277)
+	at pageobjects.LoginPageObjects.navigateToURL(LoginPageObjects.java:152)
+	at stepDefs.Login_StepDefs.user_is_on_the_login_page(Login_StepDefs.java:55)
 	at ?.User is on the login page(classpath:features/Intervention.feature:58)
 </textarea>
       
@@ -391,17 +369,32 @@ Session ID: 2dc8e945e40eb6bcecdf9adbcd0454e9
       <div>Step skipped
       </div>
                   </div>
-                  <div class="step pass-bg">
+                  <div class="step fail-bg">
                     <span>stepDefs.StepDefs_Hooks.takeScreenShot(io.cucumber.java.Scenario)</span>
-      <div>Step is failed
-      </div>
-      <div>Failed Step Name: Validate export to excel in Overview screen functionality
-          <div class="row mb-3"><div class="col-md-3">
-    <a href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABkAAAALRCAIAAACMG/gFAAABKGlDQ1BTa2lhAAAokX2QsUrDUBiFv1sLotipDg4OGbto01ijgkuaxuLaKjTtlKZpFNs0pCn6CoKjD+Dm4CqCo28gCE4O9gkUB2dJgqQg8cAPH4cD954DuTWAvAwjLwyajZrUNjvS4jsCQSzLnvhkS8D3a5J92fgnl6WlvjOxgU8gDNpmB0QfWHUTvoi4l/BVxOehH4K4iTg4auog7oGSO8e9Obb9IMq/Afuj4dRO/82K4x23gDawToMxY1yGOJRpccYpFmVUdDTqKMjsUEFmDwOVXTRkahxgYLAVn0IdHQMNBZUqVZRoz+TJk0fYnsFCN/UcHx4uofCReqU7KF7D0yz10o19K7BiKw/kBgP4uoWCCcVnWO7+DpvRVfrTVeIQD5tNpLhjBfUHoj1L42JO7RQAABPUSURBVHic7dgxAQAgDMAwwL/n4YCXHomC3t0zswAAAACg6vwOAAAAAIAXAwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgDQDCwAAAIA0AwsAAACANAMLAAAAgLQLPlYIn7Z8iG4AAAAASUVORK5CYII=" data-featherlight="image"><span class="badge badge-gradient-primary">base64 img</span></a>
-        
-    </div></div>
-</div>
       <div>
+        <textarea disabled class="code-block">org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=129.0.6668.90)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'XSSPC07', ip: '10.10.222.101', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_202'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.90, chrome: {chromedriverVersion: 129.0.6668.91 (b00bc8b76d60..., userDataDir: C:\Users\SUCHIT~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53137}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 83bd8c7cc964472ac4cb954f4cdff3b2
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:609)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:295)
+	at stepDefs.StepDefs_Hooks.takeScreenShot(StepDefs_Hooks.java:77)
+</textarea>
+      
       </div>
                   </div>
                   <div class="step pass-bg">
@@ -459,7 +452,7 @@ Session ID: 2dc8e945e40eb6bcecdf9adbcd0454e9
 <tbody>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>17:07:49 PM</td>
+<td>13:46:17 PM</td>
 <td>
 <a href="#" class="linked" test-id='1' id='3'>Validate export to excel in Overview screen functionality</a>
 <div class="">
@@ -495,7 +488,7 @@ Session ID: 2dc8e945e40eb6bcecdf9adbcd0454e9
 <tbody>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>17:07:49 PM</td>
+<td>13:46:17 PM</td>
 <td>
 <a href="#" class="linked" test-id='1' id='3'>Validate export to excel in Overview screen functionality</a>
 <div class="">
@@ -528,12 +521,12 @@ Session ID: 2dc8e945e40eb6bcecdf9adbcd0454e9
 <span class="meta">
 <span class='badge log badge-danger'>1</span>
 </span>
-<p class="name">org.openqa.selenium.NoSuchElementException</p>
+<p class="name">org.openqa.selenium.NoSuchWindowException</p>
 <p class="duration text-sm">1 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>org.openqa.selenium.NoSuchElementException</h4>
+<h4>org.openqa.selenium.NoSuchWindowException</h4>
 <span status="fail" class='badge log badge-danger'>1 failed</span>
 </div>
 <table class='table table-sm mt-4'>
@@ -547,11 +540,21 @@ Session ID: 2dc8e945e40eb6bcecdf9adbcd0454e9
 <tbody>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>17:07:53 PM</td>
+<td>13:46:20 PM</td>
 <td>
 <a href="#" class="linked" test-id='1' id='5'>Given User is on the login page</a>
 <div class="">
 <span class="badge badge-default">Login page feature.Validate export to excel in Overview screen functionality.Given User is on the login page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:28:09 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='11'>stepDefs.StepDefs_Hooks.takeScreenShot(io.cucumber.java.Scenario)</a>
+<div class="">
+<span class="badge badge-default">Login page feature.Validate export to excel in Overview screen functionality.stepDefs.StepDefs_Hooks.takeScreenShot(io.cucumber.java.Scenario)</span>
 </div>
 </td>
 </tr>

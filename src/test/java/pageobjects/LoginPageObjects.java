@@ -141,25 +141,31 @@ public class LoginPageObjects extends ConfigReader {
 	public  void navigateToURL() throws IOException
 	{
 		
-		final JPanel panel = new JPanel();
-	    final JRadioButton TestUrl_Btn = new JRadioButton("Test");
-	    final JRadioButton LiveURL_Btn = new JRadioButton("Live");
-	    panel.add(TestUrl_Btn);
-	    panel.add(LiveURL_Btn);
-	    JOptionPane.showMessageDialog(null, panel);
-
-	    if(TestUrl_Btn.isSelected()) {
-			driver.get(setProperty("testUrl"));
-			scn.log("Browser navigated to url");
-		}
-		
-		else if(LiveURL_Btn.isSelected())  {
-			
-			driver.get(setProperty("liveUrl"));
-			scn.log("Browser navigated");
-		}
+//		final JPanel panel = new JPanel();
+//	    final JRadioButton TestUrl_Btn = new JRadioButton("Test");
+//	    final JRadioButton LiveURL_Btn = new JRadioButton("Live");
+//	    panel.add(TestUrl_Btn);
+//	    panel.add(LiveURL_Btn);
+//	    JOptionPane.showMessageDialog(null, panel);
+//
+//	    if(TestUrl_Btn.isSelected()) {
+//			driver.get(setProperty("testUrl"));
+//			scn.log("Browser navigated to url");
+//		}
+//		
+//		else if(LiveURL_Btn.isSelected())  {
+//			
+//			driver.get(setProperty("liveUrl"));
+//			scn.log("Browser navigated");
+//		}
 	
 		
+		
+		
+		driver.get(base_url);
+	    
+	    
+	    
 	}
 	
 
